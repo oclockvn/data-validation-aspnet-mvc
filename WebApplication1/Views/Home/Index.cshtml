@@ -1,0 +1,33 @@
+﻿@using WebApplication1.Models
+@model Product
+
+@{
+    ViewBag.Title = "Data Validation";        
+}
+
+@using (Html.BeginForm("CreateProduct", "Home", FormMethod.Post, new { id = "product-form", style = "margin-top: 2em;" }))
+{   
+    <div class="form-group">
+        <label>Product name</label>
+        @Html.TextBoxFor(m => m.Name, new { @class="form-control"})
+    </div>
+    
+    <div class="form-group">
+        <label>Product price</label>
+        @Html.TextBoxFor(m => m.Price, new { @class="form-control"})
+    </div>
+    
+    <div class="form-group">
+        <label>Product snippet</label>
+        @Html.TextBoxFor(m => m.Snippet, new { @class="form-control"})
+    </div>
+    
+    <div class="form-group">
+        <label>Product name</label>
+        @Html.TextAreaFor(m => m.Description, new { @class="form-control"})
+    </div>
+    
+    <div>
+        <button type="submit" class="btn btn-default">Save changes</button>
+    </div>
+}
