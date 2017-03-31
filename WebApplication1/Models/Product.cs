@@ -17,7 +17,7 @@ namespace WebApplication1.Models
         public string Description { get; set; }
 
         [Display(Name = "Product snippet")]
-        [StringLength(250, ErrorMessage = "{0} is too long")]
+        [StringLength(20, ErrorMessage = "{0} is too long")]
         public string Snippet { get; set; }
     }
 }

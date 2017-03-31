@@ -15,14 +15,16 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateProduct(Product model)
+        public ActionResult Index(Product model)
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", model);
+                var errors = ModelState.SelectMany(m => m.Value.Errors).Select(e => e.ErrorMessage).ToList();
+
+                return View(model);
             }
 
-            return View("Index");
+            return View("IndexSuccesOrSomethingElse");
         }
     }
 }

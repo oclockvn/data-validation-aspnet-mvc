@@ -5,8 +5,10 @@
     ViewBag.Title = "Data Validation";        
 }
 
-@using (Html.BeginForm("CreateProduct", "Home", FormMethod.Post, new { id = "product-form", style = "margin-top: 2em;" }))
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "product-form", style = "margin-top: 2em;" }))
 {   
+    @Html.ValidationSummary()
+    
     <div class="form-group">
         <label>Product name</label>
         @Html.TextBoxFor(m => m.Name, new { @class="form-control"})
